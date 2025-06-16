@@ -2,5 +2,12 @@
   "Home": {
     "Header": "test es",
     "NotFound": "Página no encontrada"
+  },
+  "GameButtons": {
+    "StartHelper": "Iniciar ayuda"
+  },
+  "GameDescs": {
+    "Cluedo": "Cluedo es un juego de mesa de detectives y misterio en el que los jugadores deben resolver un crimen ficticio usando su capacidad de deducción.",
+    "Poker": "El póker es un juego de cartas que se basa en la combinación de habilidad, estrategia y suerte, donde los jugadores compiten para formar la mejor mano posible según las reglas de la variante específica que estén jugando."
   }
 }
