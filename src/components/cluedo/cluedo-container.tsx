@@ -1,0 +1,47 @@
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
+import CharactersTable from "./characters-table";
+
+export default function CluedoContainer() {
+  return (
+    <div className="h-full w-full rounded-md bg-gray-200 p-2">
+      <Tabs defaultValue="characters" className="h-full w-full space-y-4">
+        <div className="flex justify-center">
+          <TabsList className="flex justify-center gap-2 rounded-md bg-white shadow-md">
+            <TabsTrigger
+              className="data-[state=active]:bg-gray-900 data-[state=active]:text-white"
+              value="characters"
+            >
+              Characters
+            </TabsTrigger>
+            <TabsTrigger
+              className="data-[state=active]:bg-gray-900 data-[state=active]:text-white"
+              value="weapon"
+            >
+              Weapon
+            </TabsTrigger>
+            <TabsTrigger
+              className="data-[state=active]:bg-gray-900 data-[state=active]:text-white"
+              value="location"
+            >
+              Location
+            </TabsTrigger>
+          </TabsList>
+        </div>
+
+        <TabsContent
+          value="characters"
+          className="rounded-md bg-white p-2 shadow"
+        >
+          <CharactersTable />
+        </TabsContent>
+
+        <TabsContent
+          value="weapon"
+          className="rounded-md bg-white p-2 shadow-md"
+        >
+          Change your password here.
+        </TabsContent>
+      </Tabs>
+    </div>
+  );
+}

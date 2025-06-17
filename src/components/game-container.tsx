@@ -8,7 +8,7 @@ export default function GameContainer() {
   return (
     <div className="grid grid-cols-2 gap-6 rounded-md bg-gray-200 p-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
       <GameButton
-        imageSrc="/logoNoText.png"
+        imageSrc="/Cluedo.png"
         altText="Cluedo"
         gameName="Cluedo"
         description={t("Cluedo")}
