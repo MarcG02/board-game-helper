@@ -51,7 +51,7 @@ export default function GameButton({
           <DialogDescription>{description}</DialogDescription>
         </DialogHeader>
 
-        <div className="relative aspect-video w-full overflow-hidden rounded-lg py-4">
+        <div className="relative aspect-video w-full overflow-hidden rounded-lg px-2 py-4">
           <Image src={imageSrc} alt={altText} fill className="object-contain" />
         </div>
 

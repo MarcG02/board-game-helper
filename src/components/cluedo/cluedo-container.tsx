@@ -1,5 +1,6 @@
+import { charList, locationList, weaponList } from "@/lib/constants";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
-import CharactersTable from "./characters-table";
+import CheckTable from "./check-table";
 
 export default function CluedoContainer() {
   return (
@@ -32,14 +33,21 @@ export default function CluedoContainer() {
           value="characters"
           className="rounded-md bg-white p-2 shadow"
         >
-          <CharactersTable />
+          <CheckTable thingsList={charList} category="Characters" />
         </TabsContent>
 
         <TabsContent
           value="weapon"
           className="rounded-md bg-white p-2 shadow-md"
         >
-          Change your password here.
+          <CheckTable thingsList={weaponList} category="Weapons" />
+        </TabsContent>
+
+        <TabsContent
+          value="location"
+          className="rounded-md bg-white p-2 shadow-md"
+        >
+          <CheckTable thingsList={locationList} category="Locations" />
         </TabsContent>
       </Tabs>
     </div>
