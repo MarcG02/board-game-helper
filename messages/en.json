@@ -10,6 +10,13 @@
     "Cluedo": "Juego de estrategia y comercio para 3-4 jugadores.",
     "Poker": "El póker es un juego de cartas que se basa en la combinación de habilidad, estrategia y suerte."
   },
+  "Cluedo": {
+    "Tabs": {
+      "chars": "Who?",
+      "weapons": "Which weapon?",
+      "locations": "Where?"
+    }
+  },
   "Characters": {
     "green": "Reverend Green",
     "yellow": "Colonel Mustard",

@@ -1,8 +1,12 @@
+"use client";
+
 import { charList, locationList, weaponList } from "@/lib/constants";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 import CheckTable from "./check-table";
+import { useTranslations } from "next-intl";
 
 export default function CluedoContainer() {
+  const tTabs = useTranslations("Cluedo.Tabs");
   return (
     <div className="h-full w-full rounded-md bg-gray-200 p-2">
       <Tabs defaultValue="characters" className="h-full w-full space-y-4">
@@ -12,19 +16,19 @@ export default function CluedoContainer() {
               className="data-[state=active]:bg-gray-900 data-[state=active]:text-white"
               value="characters"
             >
-              Characters
+              {tTabs("chars")}
             </TabsTrigger>
             <TabsTrigger
               className="data-[state=active]:bg-gray-900 data-[state=active]:text-white"
               value="weapon"
             >
-              Weapon
+              {tTabs("weapons")}
             </TabsTrigger>
             <TabsTrigger
               className="data-[state=active]:bg-gray-900 data-[state=active]:text-white"
               value="location"
             >
-              Location
+              {tTabs("locations")}
             </TabsTrigger>
           </TabsList>
         </div>
