@@ -12,6 +12,8 @@ type TGamesContext = {
   locationSteps: number[];
   updateStep: (category: Category, index: number, value: number) => void;
   resetAll: () => void;
+  activeTab: string;
+  setActiveTab: (value: string) => void;
 };
 
 export const GamesContext = createContext<TGamesContext | null>(null);
@@ -22,6 +24,25 @@ type GameProviderProps = {
 
 export default function GameProvider({ children }: GameProviderProps) {
   const [isClient, setIsClient] = useState(false);
+
+  const [activeTab, setActiveTabState] = useState("characters");
+
+  useEffect(() => {
+    if (!isClient) return;
+    const stored = localStorage.getItem("cluedo-active-tab");
+    if (stored) {
+      setActiveTabState(stored);
+    }
+  }, [isClient]);
+
+  useEffect(() => {
+    if (!isClient) return;
+    localStorage.setItem("cluedo-active-tab", activeTab);
+  }, [activeTab, isClient]);
+
+  const setActiveTab = (value: string) => {
+    setActiveTabState(value);
+  };
 
   // Know if it is mounted in the client
   useEffect(() => {
@@ -110,6 +131,8 @@ export default function GameProvider({ children }: GameProviderProps) {
         locationSteps,
         updateStep,
         resetAll,
+        activeTab,
+        setActiveTab,
       }}
     >
       {children}

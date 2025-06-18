@@ -6,13 +6,20 @@ import CheckTable from "./check-table";
 import { useTranslations } from "next-intl";
 import ResetChecksButton from "./reset-check-button";
 import { Separator } from "../ui/separator";
+import { useGamesContext } from "@/lib/hooks";
 
 export default function CluedoContainer() {
   const tTabs = useTranslations("Cluedo.Tabs");
 
+  const { activeTab, setActiveTab } = useGamesContext();
+
   return (
     <div className="h-full w-full rounded-md bg-gray-200 p-4">
-      <Tabs defaultValue="characters" className="h-full w-full space-y-4">
+      <Tabs
+        value={activeTab}
+        onValueChange={setActiveTab}
+        className="h-full w-full space-y-4"
+      >
         <div className="flex justify-center">
           <TabsList className="flex justify-center gap-2 rounded-md bg-white shadow-md">
             <TabsTrigger
