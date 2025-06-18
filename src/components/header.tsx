@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Header() {
   return (
     <header className="w-full bg-gray-900 text-white shadow-lg">
-      <Link href={"/home"}>
+      <Link href={"/"}>
         <div className="mx-auto flex max-w-7xl items-center justify-start space-x-4 p-4">
           <div className="relative h-10 w-10">
             <Image

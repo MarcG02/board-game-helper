@@ -4,11 +4,14 @@ import { charList, locationList, weaponList } from "@/lib/constants";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 import CheckTable from "./check-table";
 import { useTranslations } from "next-intl";
+import ResetChecksButton from "./reset-check-button";
+import { Separator } from "../ui/separator";
 
 export default function CluedoContainer() {
   const tTabs = useTranslations("Cluedo.Tabs");
+
   return (
-    <div className="h-full w-full rounded-md bg-gray-200 p-2">
+    <div className="h-full w-full rounded-md bg-gray-200 p-4">
       <Tabs defaultValue="characters" className="h-full w-full space-y-4">
         <div className="flex justify-center">
           <TabsList className="flex justify-center gap-2 rounded-md bg-white shadow-md">
@@ -38,6 +41,8 @@ export default function CluedoContainer() {
           className="rounded-md bg-white p-2 shadow"
         >
           <CheckTable thingsList={charList} category="Characters" />
+          <Separator className="mb-4" />
+          <ResetChecksButton category="Characters" />
         </TabsContent>
 
         <TabsContent
@@ -45,6 +50,8 @@ export default function CluedoContainer() {
           className="rounded-md bg-white p-2 shadow-md"
         >
           <CheckTable thingsList={weaponList} category="Weapons" />
+          <Separator className="mb-4" />
+          <ResetChecksButton category="Weapons" />
         </TabsContent>
 
         <TabsContent
@@ -52,6 +59,8 @@ export default function CluedoContainer() {
           className="rounded-md bg-white p-2 shadow-md"
         >
           <CheckTable thingsList={locationList} category="Locations" />
+          <Separator className="mb-4" />
+          <ResetChecksButton category="Locations" />
         </TabsContent>
       </Tabs>
     </div>

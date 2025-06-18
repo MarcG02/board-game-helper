@@ -15,6 +15,9 @@
       "chars": "Who?",
       "weapons": "Which weapon?",
       "locations": "Where?"
+    },
+    "Table": {
+      "reset": "Reset Table"
     }
   },
   "Characters": {

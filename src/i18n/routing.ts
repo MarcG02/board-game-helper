@@ -4,6 +4,6 @@ export const routing = defineRouting({
   locales: ["es", "en"],
   defaultLocale: "en",
   pathnames: {
-    "/home": "/home",
+    "/": "/",
   },
 });

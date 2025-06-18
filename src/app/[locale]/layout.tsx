@@ -8,6 +8,7 @@ import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
 import { Toaster } from "sonner";
 import Header from "@/components/header";
+import GameProvider from "@/contexts/game-provider";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -39,8 +40,10 @@ export default async function RootLayout({
       <body className={`${montserrat.className} min-h-screen`}>
         <Header />
         <NextIntlClientProvider>
-          {children}
-          <Toaster position="top-right" />
+          <GameProvider>
+            {children}
+            <Toaster position="top-right" />
+          </GameProvider>
         </NextIntlClientProvider>
       </body>
     </html>

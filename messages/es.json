@@ -15,6 +15,9 @@
       "chars": "¿Quién?",
       "weapons": "¿Qué arma?",
       "locations": "¿Dónde?"
+    },
+    "Buttons": {
+      "reset": "Limpiar Tabla"
     }
   },
   "Characters": {

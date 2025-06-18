@@ -1,16 +1,16 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import React from "react";
 import {
   Table,
   TableBody,
   TableCell,
-  TableHead,
   TableHeader,
   TableRow,
 } from "../ui/table";
 import { CheckQuestion } from "./check-question";
+import { cn } from "@/lib/utils";
+import { useGamesContext } from "@/lib/hooks";
 
 type CheckTableProps = {
   thingsList: string[];
@@ -22,6 +22,16 @@ export default function CheckTable({ thingsList, category }: CheckTableProps) {
   const tWeapons = useTranslations("Weapons");
   const tLocations = useTranslations("Locations");
 
+  const { charSteps, weaponSteps, locationSteps, updateStep } =
+    useGamesContext();
+
+  const steps =
+    category === "Characters"
+      ? charSteps
+      : category === "Weapons"
+        ? weaponSteps
+        : locationSteps;
+
   const translate = (key: string) => {
     if (category === "Characters") return tChars(key);
     if (category === "Weapons") return tWeapons(key);
@@ -29,34 +39,17 @@ export default function CheckTable({ thingsList, category }: CheckTableProps) {
     return key;
   };
 
-  // Estado para cada fila, array con valores 0,1,2
-  const [steps, setSteps] = React.useState<number[]>(
-    Array(thingsList.length).fill(0),
-  );
-
-  const handleStepChange = (index: number, newStep: number) => {
-    setSteps((prev) => {
-      const copy = [...prev];
-      copy[index] = newStep;
-      return copy;
-    });
-  };
-
   return (
     <Table>
-      <TableHeader>
-        <TableRow>
-          <TableHead className="w-[100px] font-bold">Name</TableHead>
-          <TableHead></TableHead>
-        </TableRow>
-      </TableHeader>
+      <TableHeader></TableHeader>
       <TableBody>
         {thingsList.map((thing, index) => (
           <TableRow
             key={index}
-            className={
-              steps[index] === 1 ? "bg-yellow-100 dark:bg-yellow-900/40" : ""
-            }
+            className={cn(
+              steps[index] === 1 && "bg-yellow-100 dark:bg-yellow-900/40",
+              steps[index] === 2 && "bg-blue-100 dark:bg-blue-900/40",
+            )}
           >
             <TableCell className="w-[70%] font-medium">
               {translate(thing)}
@@ -65,7 +58,7 @@ export default function CheckTable({ thingsList, category }: CheckTableProps) {
               <CheckQuestion
                 className="h-6 w-6"
                 step={steps[index]}
-                onStepChange={(newStep) => handleStepChange(index, newStep)}
+                onStepChange={(newStep) => updateStep(category, index, newStep)}
               />
             </TableCell>
           </TableRow>
