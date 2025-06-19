@@ -37,7 +37,7 @@ export default function ResetChecksButton({ category }: Props) {
   return (
     <Button
       variant={category === "All" ? "destructive" : "outline"}
-      className={`ml-auto block flex items-center ${
+      className={`ml-auto flex items-center ${
         category === "All" ? "bg-red-700 text-white" : "bg-gray-900 text-white"
       }`}
       onClick={handleReset}
