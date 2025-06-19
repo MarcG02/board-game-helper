@@ -14,7 +14,7 @@ export default function GameContainer() {
         description={t("Cluedo")}
       />
       <GameButton
-        imageSrc="/logoNoText.png"
+        imageSrc="/poker.png"
         altText="Poker"
         gameName="Poker"
         description={t("Poker")}

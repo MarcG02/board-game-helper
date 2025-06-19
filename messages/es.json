@@ -21,6 +21,36 @@
       "resetAll": "Limpiar Tablas"
     }
   },
+  "Poker": {
+    "Names": {
+      "highCard": "Carta alta",
+      "pair": "Pareja",
+      "doublePair": "Doble pareja",
+      "trio": "Trío",
+      "straight": "Escalera",
+      "flush": "Color",
+      "full": "Full",
+      "poker": "Poker",
+      "straightFlush": "Escalera de color",
+      "royalFlush": "Escalera Real"
+    },
+    "Descriptions": {
+      "highCard": "2-3-4-5-6-7-8-9-10-J-Q-K-A",
+      "pair": "2 + 2",
+      "doublePair": "'4 + 4' + 'Q + Q'",
+      "trio": "3 + 3 + 3",
+      "straight": "5 Consecutivas (el 'A' sólo puede ir al principio o final)",
+      "flush": "5 Cartas del mismo palo",
+      "full": "Pareja + Trío",
+      "poker": "4 Cartas iguales",
+      "straightFlush": "Escalera del mismo palo",
+      "royalFlush": "Escalera de color pero con: 10-J-Q-K-A"
+    },
+    "Titles": {
+      "plays": "Jugadas",
+      "desc": "Descripción"
+    }
+  },
   "Characters": {
     "green": "Padre Prado",
     "yellow": "Coronel Rubio",
