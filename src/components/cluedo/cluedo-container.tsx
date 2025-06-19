@@ -72,6 +72,7 @@ export default function CluedoContainer() {
             <Separator className="mb-4" />
             <ResetChecksButton category="Locations" />
           </TabsContent>
+          <ResetChecksButton category="All" />
         </Tabs>
       </div>
     </div>

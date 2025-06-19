@@ -20,3 +20,16 @@ export const locationList = [
   "lounge",
   "study",
 ];
+
+export const pokerNamesList = [
+  "highCard",
+  "pair",
+  "doublePair",
+  "trio",
+  "straight",
+  "flush",
+  "full",
+  "poker",
+  "straightFlush",
+  "royalFlush",
+];

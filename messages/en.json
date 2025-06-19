@@ -17,7 +17,38 @@
       "locations": "Where?"
     },
     "Table": {
-      "reset": "Reset Table"
+      "reset": "Reset Table",
+      "resetAll": "Reset every table"
+    }
+  },
+  "Poker": {
+    "Names": {
+      "highCard": "High Card",
+      "pair": "Pair",
+      "doublePair": "Two Pair",
+      "trio": "Three of a Kind",
+      "straight": "Straight",
+      "flush": "Flush",
+      "full": "Full House",
+      "poker": "Four of a Kind",
+      "straightFlush": "Straight Flush",
+      "royalFlush": "Royal Flush"
+    },
+    "Descriptions": {
+      "highCard": "2-3-4-5-6-7-8-9-10-J-Q-K-A",
+      "pair": "2 + 2",
+      "doublePair": "'4 + 4' + 'Q + Q'",
+      "trio": "3 + 3 + 3",
+      "straight": "5 consecutive cards (the 'A' can only be at the beginning or end)",
+      "flush": "5 cards of the same suit",
+      "full": "Pair + Three of a Kind",
+      "poker": "4 identical cards",
+      "straightFlush": "Straight of the same suit",
+      "royalFlush": "Straight Flush with: 10-J-Q-K-A"
+    },
+    "Titles": {
+      "plays": "Plays",
+      "desc": "Descriptions"
     }
   },
   "Characters": {
