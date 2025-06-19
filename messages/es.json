@@ -17,7 +17,8 @@
       "locations": "¿Dónde?"
     },
     "Buttons": {
-      "reset": "Limpiar Tabla"
+      "reset": "Limpiar Tabla",
+      "resetAll": "Limpiar Tablas"
     }
   },
   "Characters": {

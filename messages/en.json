@@ -17,7 +17,8 @@
       "locations": "Where?"
     },
     "Table": {
-      "reset": "Reset Table"
+      "reset": "Reset Table",
+      "resetAll": "Reset every table"
     }
   },
   "Characters": {
