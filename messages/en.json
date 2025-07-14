@@ -8,7 +8,8 @@
   },
   "GameDescs": {
     "Cluedo": "Juego de estrategia y comercio para 3-4 jugadores.",
-    "Poker": "El póker es un juego de cartas que se basa en la combinación de habilidad, estrategia y suerte."
+    "Poker": "El póker es un juego de cartas que se basa en la combinación de habilidad, estrategia y suerte.",
+    "7Wonders": "You are the leader of one of the seven great cities of antiquity. Develop your city by promoting scientific discoveries, military conquests, trade agreements, and the most prestigious constructions to lead your civilization to glory. Meanwhile, keep an eye on your competitors progress, as they share similar ambitions. Will your wonder withstand the test of time?"
   },
   "Cluedo": {
     "Tabs": {

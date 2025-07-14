@@ -17,7 +17,7 @@ export default function PokerTable() {
   const tTitles = useTranslations("Poker.Titles");
 
   return (
-    <Table className="rounded-md bg-white p-2">
+    <Table className="rounded-md border bg-white p-2">
       <TableHeader className="rounded-md bg-gray-900">
         <TableRow>
           <TableHead className="font-bold text-white">
@@ -30,11 +30,13 @@ export default function PokerTable() {
       </TableHeader>
       <TableBody>
         {pokerNamesList.map((key) => (
-          <TableRow key={key} className="border-t border-gray-200">
+          <TableRow key={key} className="border-gray-200">
             <TableCell className="border-r border-gray-200 font-bold">
               {tNames(key)}
             </TableCell>
-            <TableCell>{tDescriptions(key)}</TableCell>
+            <TableCell className="break-words whitespace-normal">
+              {tDescriptions(key)}
+            </TableCell>
           </TableRow>
         ))}
       </TableBody>
