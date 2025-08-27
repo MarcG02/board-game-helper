@@ -14,6 +14,8 @@ type TGamesContext = {
   resetAll: () => void;
   activeTab: string;
   setActiveTab: (value: string) => void;
+  username?: string;
+  setUsername: (event: string) => void;
 };
 
 export const GamesContext = createContext<TGamesContext | null>(null);
@@ -26,6 +28,8 @@ export default function GameProvider({ children }: GameProviderProps) {
   const [isClient, setIsClient] = useState(false);
 
   const [activeTab, setActiveTabState] = useState("characters");
+
+  const [username, setUsername] = useState("");
 
   useEffect(() => {
     if (!isClient) return;
@@ -133,6 +137,8 @@ export default function GameProvider({ children }: GameProviderProps) {
         resetAll,
         activeTab,
         setActiveTab,
+        username,
+        setUsername,
       }}
     >
       {children}

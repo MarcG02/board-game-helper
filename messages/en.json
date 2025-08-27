@@ -8,7 +8,8 @@
   },
   "GameDescs": {
     "Cluedo": "Juego de estrategia y comercio para 3-4 jugadores.",
-    "Poker": "El póker es un juego de cartas que se basa en la combinación de habilidad, estrategia y suerte."
+    "Poker": "El póker es un juego de cartas que se basa en la combinación de habilidad, estrategia y suerte.",
+    "Yahtzee": "'Yahtzee' or 'La generala' is a dice game in which five dice are rolled up to three times per turn in order to get the highest number of dice showing the same face."
   },
   "Cluedo": {
     "Tabs": {
