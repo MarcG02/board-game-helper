@@ -19,6 +19,12 @@ export default function GameContainer() {
         gameName="Poker"
         description={t("Poker")}
       />
+      <GameButton
+        imageSrc="/yahtzee.png"
+        altText="Yahtzee"
+        gameName="Yahtzee"
+        description={t("Yahtzee")}
+      />
     </div>
   );
 }

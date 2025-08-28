@@ -8,7 +8,8 @@
   },
   "GameDescs": {
     "Cluedo": "Cluedo es un juego de mesa de detectives y misterio en el que los jugadores deben resolver un crimen ficticio usando su capacidad de deducción.",
-    "Poker": "El póker es un juego de cartas que se basa en la combinación de habilidad, estrategia y suerte, donde los jugadores compiten para formar la mejor mano posible según las reglas de la variante específica que estén jugando."
+    "Poker": "El póker es un juego de cartas que se basa en la combinación de habilidad, estrategia y suerte, donde los jugadores compiten para formar la mejor mano posible según las reglas de la variante específica que estén jugando.",
+    "Yahtzee": "El 'Yahtzee' o 'La Generala' es un juego de dados en el que se lanzan cinco dados hasta tres veces por turno para lograr obtener el número máximo de dados de una misma cara."
   },
   "Cluedo": {
     "Tabs": {
