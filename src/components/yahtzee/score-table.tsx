@@ -13,8 +13,8 @@ import NumberInput from "../number-input";
 import SimpleCard from "../simple-card";
 import { useState } from "react";
 import { yahtzeeCalculation } from "@/lib/utils";
-import { Button } from "../ui/button";
-import { FaTrashAlt } from "react-icons/fa";
+// import { Button } from "../ui/button";
+// import { FaTrashAlt } from "react-icons/fa";
 
 const faces = ["A", "K", "Q", "J", "R", "N"];
 
@@ -38,14 +38,10 @@ export default function ScoreTable() {
     }
   };
 
-  const resetScores = () => {
-    setScores1({});
-    setScores2({});
-  };
-
-  const allFilled =
-    faces.every((f) => scores1[f] !== undefined && scores1[f] > 0) &&
-    faces.every((f) => scores2[f] !== undefined && scores2[f] > 0);
+  // const resetScores = () => {
+  //   setScores1({});
+  //   setScores2({});
+  // };
 
   return (
     <div className="flex h-full w-full flex-col content-center justify-center gap-4 text-center">
@@ -92,21 +88,19 @@ export default function ScoreTable() {
             <TableRow>
               <TableCell className="font-bold">Total</TableCell>
               <TableCell className="font-bold" colSpan={2}>
-                <SimpleCard>
-                  {allFilled ? totalScore1 + totalScore2 : "-"}
-                </SimpleCard>
+                <SimpleCard>{totalScore1 + totalScore2 || "-"}</SimpleCard>
               </TableCell>
             </TableRow>
           </TableBody>
         </Table>
       </div>
-      <Button
+      {/* <Button
         variant="destructive"
         onClick={resetScores}
         className="absolute right-6 bottom-1 w-fit"
       >
         {<FaTrashAlt />} Clear fields
-      </Button>
+      </Button> */}
     </div>
   );
 }
