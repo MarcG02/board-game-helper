@@ -78,5 +78,82 @@
     "library": "Library",
     "lounge": "Lounge",
     "study": "Study"
+  },
+  "HomePage": {
+    "nav": {
+      "home": "Home",
+      "helpers": "{count} helpers"
+    },
+    "hero": {
+      "badge": "{count, plural, one {# game available} other {# games available}}",
+      "tableReady": "Table ready",
+      "title": "What are we playing today?",
+      "description": "Open the rules assistant, score the game, or run a session without losing the rhythm of the table.",
+      "randomLabel": "Random game",
+      "randomIdle": "Roll the dice",
+      "randomResult": "Today is {game}",
+      "timerLabel": "Turn timer",
+      "timerStart": "Start timer",
+      "timerPause": "Pause timer",
+      "timerReset": "Reset timer",
+      "timerDone": "Time's up!",
+      "explore": "Explore games"
+    },
+    "library": {
+      "title": "Game library",
+      "subtitle": "Pick an assistant and start playing.",
+      "searchPlaceholder": "Search by title or category...",
+      "searchLabel": "Search games",
+      "playersLabel": "Players:",
+      "categoryLabel": "Category:",
+      "all": "All",
+      "categories": {
+        "all": "All",
+        "deduction": "Deduction",
+        "cards": "Cards",
+        "dice": "Dice"
+      },
+      "playerFilters": {
+        "all": "All",
+        "one": "Solo (1)",
+        "two": "Duo (2)",
+        "threeFour": "3-4",
+        "fivePlus": "5+"
+      },
+      "results": "{count, plural, one {# game} other {# games}}",
+      "emptyTitle": "No games match those filters.",
+      "emptyHint": "Try another search or clear the filters.",
+      "clearFilters": "Clear filters",
+      "rules": "Rules",
+      "play": "Play",
+      "players": "{min}-{max} players",
+      "minutes": "{count} min",
+      "variableDuration": "Variable duration"
+    },
+    "difficulty": {
+      "light": "Light",
+      "medium": "Medium",
+      "expert": "Expert"
+    },
+    "companion": {
+      "howTitle": "How does it work?",
+      "howSubtitle": "Three steps to get started.",
+      "step1Title": "Pick a game",
+      "step1Desc": "Filter the library by players or category.",
+      "step2Title": "Open the assistant",
+      "step2Desc": "Every game has its own table tool.",
+      "step3Title": "Play without friction",
+      "step3Desc": "Check rules, score points, and keep the game moving.",
+      "helpersTitle": "Available assistants",
+      "helpersSubtitle": "Shortcuts to your tools.",
+      "tipTitle": "Table tip",
+      "tip": "Use the timer to keep the pace and the random picker to unblock an undecided table.",
+      "open": "Open"
+    },
+    "footer": {
+      "tagline": "Your ultimate companion for board game nights.",
+      "ready": "Table ready",
+      "version": "v0.1.0"
+    }
   }
 }

@@ -56,8 +56,8 @@ export default async function RootLayout({
       <body
         className={`${epilogue.variable} ${spaceGrotesk.variable} ${jetBrainsMono.variable} min-h-screen font-sans`}
       >
-        <Header />
         <NextIntlClientProvider>
+          <Header />
           <GameProvider>
             {children}
             <Toaster position="top-right" theme="dark" />

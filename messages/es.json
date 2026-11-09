@@ -78,5 +78,82 @@
     "library": "Biblioteca",
     "lounge": "Salón",
     "study": "Estudio"
+  },
+  "HomePage": {
+    "nav": {
+      "home": "Inicio",
+      "helpers": "{count} asistentes"
+    },
+    "hero": {
+      "badge": "{count, plural, one {# juego disponible} other {# juegos disponibles}}",
+      "tableReady": "Mesa lista",
+      "title": "¿A qué jugamos hoy?",
+      "description": "Abrí el asistente de reglas, calculá puntajes o resolvé una partida sin perder el ritmo de la mesa.",
+      "randomLabel": "Juego al azar",
+      "randomIdle": "Tirar dado",
+      "randomResult": "Hoy toca {game}",
+      "timerLabel": "Temporizador de turno",
+      "timerStart": "Iniciar temporizador",
+      "timerPause": "Pausar temporizador",
+      "timerReset": "Reiniciar temporizador",
+      "timerDone": "¡Tiempo!",
+      "explore": "Explorar juegos"
+    },
+    "library": {
+      "title": "Biblioteca de juegos",
+      "subtitle": "Elegí un asistente y empezá a jugar.",
+      "searchPlaceholder": "Buscar por título o categoría...",
+      "searchLabel": "Buscar juegos",
+      "playersLabel": "Jugadores:",
+      "categoryLabel": "Categoría:",
+      "all": "Todos",
+      "categories": {
+        "all": "Todas",
+        "deduction": "Deducción",
+        "cards": "Cartas",
+        "dice": "Dados"
+      },
+      "playerFilters": {
+        "all": "Todos",
+        "one": "Solo (1)",
+        "two": "Dúo (2)",
+        "threeFour": "3-4",
+        "fivePlus": "5+"
+      },
+      "results": "{count, plural, one {# juego} other {# juegos}}",
+      "emptyTitle": "No encontramos juegos con esos filtros.",
+      "emptyHint": "Probá con otra búsqueda o limpiá los filtros.",
+      "clearFilters": "Limpiar filtros",
+      "rules": "Reglas",
+      "play": "Jugar",
+      "players": "{min}-{max} jugadores",
+      "minutes": "{count} min",
+      "variableDuration": "Duración variable"
+    },
+    "difficulty": {
+      "light": "Ligero",
+      "medium": "Medio",
+      "expert": "Experto"
+    },
+    "companion": {
+      "howTitle": "¿Cómo funciona?",
+      "howSubtitle": "Tres pasos para empezar.",
+      "step1Title": "Elegí un juego",
+      "step1Desc": "Filtrá la biblioteca por jugadores o categoría.",
+      "step2Title": "Abrí el asistente",
+      "step2Desc": "Cada juego tiene su propia herramienta de mesa.",
+      "step3Title": "Jugá sin fricción",
+      "step3Desc": "Consultá reglas, calculá puntajes y seguí la partida.",
+      "helpersTitle": "Asistentes disponibles",
+      "helpersSubtitle": "Accesos directos a tus herramientas.",
+      "tipTitle": "Consejo de mesa",
+      "tip": "Usá el temporizador para mantener el ritmo y el selector de juego al azar para destrabar una mesa indecisa.",
+      "open": "Abrir"
+    },
+    "footer": {
+      "tagline": "El compañero definitivo para tus noches de juego de mesa.",
+      "ready": "Mesa lista",
+      "version": "v0.1.0"
+    }
   }
 }
