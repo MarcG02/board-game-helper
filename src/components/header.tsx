@@ -1,11 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import { Sparkles } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/navigation";
 import { games } from "@/lib/games";
 import { cn } from "@/lib/utils";
+import LanguageSelector from "./language-selector";
 
 export default function Header() {
   const t = useTranslations("HomePage.nav");
@@ -25,11 +25,11 @@ export default function Header() {
     );
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-outline-variant/40 bg-surface-container-lowest/90 backdrop-blur-xl">
+    <header className="border-outline-variant/40 bg-surface-container-lowest/90 sticky top-0 z-50 w-full border-b backdrop-blur-xl">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="flex items-center gap-3 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+          className="focus-visible:ring-primary/40 flex items-center gap-3 rounded-lg focus-visible:ring-2 focus-visible:outline-none"
         >
           <span className="relative h-10 w-10 shrink-0">
             <Image
@@ -40,7 +40,7 @@ export default function Header() {
               className="rounded-lg object-contain"
             />
           </span>
-          <span className="text-headline-sm font-semibold tracking-tight text-primary">
+          <span className="text-headline-sm text-primary font-semibold tracking-tight">
             Board Game Helper
           </span>
         </Link>
@@ -57,14 +57,12 @@ export default function Header() {
             </Link>
           ))}
         </nav>
-
-        <span className="hidden items-center gap-1.5 rounded-full bg-secondary-container/20 px-3 py-1.5 text-label-sm uppercase tracking-wider text-secondary sm:inline-flex">
-          <Sparkles className="size-3.5" aria-hidden="true" />
-          {t("helpers", { count: games.length })}
-        </span>
+        <div className="flex items-center gap-2">
+          <LanguageSelector />
+        </div>
       </div>
 
-      <nav className="overflow-x-auto border-t border-outline-variant/30 px-4 py-2 lg:hidden">
+      <nav className="border-outline-variant/30 overflow-x-auto border-t px-4 py-2 lg:hidden">
         <div className="flex items-center gap-1">
           {navItems.map((item) => (
             <Link

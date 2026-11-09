@@ -1,4 +1,9 @@
 {
+  "LanguageSelector": {
+    "label": "Idioma",
+    "es": "Español",
+    "en": "English"
+  },
   "Home": {
     "Header": "test es",
     "NotFound": "Página no encontrada"
@@ -101,7 +106,7 @@
     },
     "library": {
       "title": "Biblioteca de juegos",
-      "subtitle": "Elegí un asistente y empezá a jugar.",
+      "subtitle": "Elige un asistente y empieza a jugar.",
       "searchPlaceholder": "Buscar por título o categoría...",
       "searchLabel": "Buscar juegos",
       "playersLabel": "Jugadores:",
@@ -138,16 +143,16 @@
     "companion": {
       "howTitle": "¿Cómo funciona?",
       "howSubtitle": "Tres pasos para empezar.",
-      "step1Title": "Elegí un juego",
-      "step1Desc": "Filtrá la biblioteca por jugadores o categoría.",
+      "step1Title": "Elige un juego",
+      "step1Desc": "Filtra la biblioteca por jugadores o categoría.",
       "step2Title": "Abrí el asistente",
       "step2Desc": "Cada juego tiene su propia herramienta de mesa.",
-      "step3Title": "Jugá sin fricción",
-      "step3Desc": "Consultá reglas, calculá puntajes y seguí la partida.",
+      "step3Title": "Juega sin fricción",
+      "step3Desc": "Consulta reglas, calcula puntajes y sigue la partida.",
       "helpersTitle": "Asistentes disponibles",
       "helpersSubtitle": "Accesos directos a tus herramientas.",
       "tipTitle": "Consejo de mesa",
-      "tip": "Usá el temporizador para mantener el ritmo y el selector de juego al azar para destrabar una mesa indecisa.",
+      "tip": "Usa el temporizador para mantener el ritmo y el selector de juego al azar para destrabar una mesa indecisa.",
       "open": "Abrir"
     },
     "footer": {

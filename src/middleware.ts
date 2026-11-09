@@ -1,44 +1,50 @@
-import { match } from "@formatjs/intl-localematcher";
-import Negotiator from "negotiator";
 import { NextRequest, NextResponse } from "next/server";
+import { routing } from "@/i18n/routing";
 
-const defaultLocale = "en";
-const locales = ["en", "es"];
+// next-intl resolves the active locale on the server from this request header.
+// Its own middleware sets it; this custom middleware must do the same.
+const LOCALE_HEADER = "X-NEXT-INTL-LOCALE";
+const LOCALE_COOKIE = "NEXT_LOCALE";
 
-// Get the preferred locale, similar to above or using a library
-function getLocale(request: NextRequest) {
-  const acceptedLanguage = request.headers.get("accept-language") ?? undefined;
-  const headers = { "accept-language": acceptedLanguage };
-  const languages = new Negotiator({ headers }).languages();
+// The user's persisted choice wins. On a first visit there's no cookie yet, so
+// Spanish is the default regardless of the browser language.
+function getPreferredLocale(request: NextRequest) {
+  const cookieLocale = request.cookies.get(LOCALE_COOKIE)?.value;
 
-  return match(languages, locales, defaultLocale); // -> 'en-US'
+  return (
+    routing.locales.find((locale) => locale === cookieLocale) ??
+    routing.defaultLocale
+  );
 }
 
 export function middleware(request: NextRequest) {
-  // Check if there is any supported locale in the pathname
-  const pathname = request.nextUrl.pathname;
-  const pathnameIsMissingLocale = locales.every(
-    (locale) =>
-      !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`,
+  const { pathname } = request.nextUrl;
+
+  const pathLocale = routing.locales.find(
+    (locale) => pathname === `/${locale}` || pathname.startsWith(`/${locale}/`),
   );
 
-  // Redirect if there is no locale
-  if (pathnameIsMissingLocale) {
-    const locale = getLocale(request);
-
-    // e.g. incoming request is /products
-    // The new URL is now /en-US/products
-    return NextResponse.redirect(
-      new URL(`/${locale}/${pathname}`, request.url),
-    );
+  // Request already carries a locale prefix: tell next-intl which one it is.
+  if (pathLocale) {
+    const headers = new Headers(request.headers);
+    headers.set(LOCALE_HEADER, pathLocale);
+    return NextResponse.next({ request: { headers } });
   }
+
+  // No locale in the path: redirect to the persisted choice or Spanish.
+  const locale = getPreferredLocale(request);
+  const url = request.nextUrl.clone();
+  url.pathname = pathname === "/" ? `/${locale}` : `/${locale}${pathname}`;
+
+  const response = NextResponse.redirect(url);
+  response.cookies.set(LOCALE_COOKIE, locale, { path: "/", sameSite: "lax" });
+
+  return response;
 }
 
 export const config = {
   matcher: [
-    // Skip all internal paths (_next, assets, api)
+    // Skip internal paths (_next), API routes and static assets.
     "/((?!api|assets|.*\\..*|_next).*)",
-    // Optional: only run on root (/) URL
-    // '/'
   ],
 };

@@ -1,4 +1,9 @@
 {
+  "LanguageSelector": {
+    "label": "Language",
+    "es": "Español",
+    "en": "English"
+  },
   "Home": {
     "Header": "test en",
     "NotFound": "Not Found"
