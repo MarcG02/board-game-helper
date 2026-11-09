@@ -2,7 +2,7 @@ import { routing } from "@/i18n/routing";
 import "../../styles/globals.css";
 import type { Metadata } from "next";
 import { Locale, NextIntlClientProvider } from "next-intl";
-import { Montserrat } from "next/font/google";
+import { Epilogue, JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import { ReactNode } from "react";
 import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
@@ -10,7 +10,23 @@ import { Toaster } from "sonner";
 import Header from "@/components/header";
 import GameProvider from "@/contexts/game-provider";
 
-const montserrat = Montserrat({ subsets: ["latin"] });
+const epilogue = Epilogue({
+  subsets: ["latin"],
+  variable: "--font-epilogue",
+  display: "swap",
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-space-grotesk",
+  display: "swap",
+});
+
+const jetBrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains-mono",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Board Games Helper",
@@ -36,13 +52,15 @@ export default async function RootLayout({
   setRequestLocale(locale);
 
   return (
-    <html lang={locale}>
-      <body className={`${montserrat.className} min-h-screen`}>
+    <html lang={locale} className="dark">
+      <body
+        className={`${epilogue.variable} ${spaceGrotesk.variable} ${jetBrainsMono.variable} min-h-screen font-sans`}
+      >
         <Header />
         <NextIntlClientProvider>
           <GameProvider>
             {children}
-            <Toaster position="top-right" />
+            <Toaster position="top-right" theme="dark" />
           </GameProvider>
         </NextIntlClientProvider>
       </body>
