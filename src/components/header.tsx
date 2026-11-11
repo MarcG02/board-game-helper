@@ -60,7 +60,6 @@ export default function Header() {
         </nav>
         <div className="flex items-center gap-2">
           <SidebarNav navLinkClass={navLinkClass} navItems={navItems} />
-
           <LanguageSelector />
         </div>
       </div>
