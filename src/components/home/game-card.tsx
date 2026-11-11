@@ -16,9 +16,9 @@ import {
 } from "@/components/ui/dialog";
 
 const difficultyClasses: Record<GameDifficulty, string> = {
-  light: "text-secondary",
-  medium: "text-primary",
-  expert: "text-tertiary",
+  light: "text-baize",
+  medium: "text-honey",
+  expert: "text-ember",
 };
 
 type GameCardProps = {
@@ -32,8 +32,8 @@ export default function GameCard({ game }: GameCardProps) {
   const tDescriptions = useTranslations("GameDescs");
 
   return (
-    <article className="group flex flex-col overflow-hidden rounded-xl bg-surface-container shadow-lg transition-all duration-300 hover:shadow-2xl">
-      <div className="relative h-44 w-full overflow-hidden bg-surface-container-highest">
+    <article className="group flex flex-col overflow-hidden rounded-xl bg-panel shadow-lg transition-all duration-300 hover:shadow-2xl">
+      <div className="relative h-44 w-full overflow-hidden bg-panel-highest">
         <Image
           src={game.image}
           alt={game.name}
@@ -43,23 +43,23 @@ export default function GameCard({ game }: GameCardProps) {
         />
         <span
           className={cn(
-            "absolute top-2 right-2 rounded bg-surface-container-lowest/80 px-2 py-0.5 text-label-sm font-semibold shadow backdrop-blur-md",
+            "absolute top-2 right-2 rounded bg-panel-lowest/80 px-2 py-0.5 text-label-sm font-semibold shadow backdrop-blur-md",
             difficultyClasses[game.difficulty],
           )}
         >
           {tDifficulty(game.difficulty)}
         </span>
-        <span className="absolute bottom-2 left-2 rounded bg-secondary-container/80 px-2 py-0.5 text-label-sm text-secondary-fixed">
+        <span className="absolute bottom-2 left-2 rounded bg-baize-strong/80 px-2 py-0.5 text-label-sm text-baize-soft">
           {tCategories(game.category)}
         </span>
       </div>
 
       <div className="flex flex-1 flex-col justify-between gap-4 p-4">
         <div>
-          <h3 className="text-headline-sm font-semibold text-on-surface transition-colors group-hover:text-primary">
+          <h3 className="text-headline-sm font-semibold text-ink transition-colors group-hover:text-honey">
             {game.name}
           </h3>
-          <p className="mt-1 flex flex-wrap items-center gap-2 text-label-sm text-on-surface-variant">
+          <p className="mt-1 flex flex-wrap items-center gap-2 text-label-sm text-ink-muted">
             <span className="flex items-center gap-1">
               <Users className="size-3" aria-hidden="true" />
               {t("players", { min: game.minPlayers, max: game.maxPlayers })}
@@ -80,21 +80,21 @@ export default function GameCard({ game }: GameCardProps) {
               <button
                 type="button"
                 aria-label={`${t("rules")} ${game.name}`}
-                className="flex-1 rounded-lg bg-surface-container-high py-1.5 text-center text-label-md text-on-surface transition-colors hover:bg-surface-container-highest focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:outline-none"
+                className="flex-1 rounded-lg bg-panel-high py-1.5 text-center text-label-md text-ink transition-colors hover:bg-panel-highest focus-visible:ring-2 focus-visible:ring-honey/40 focus-visible:outline-none"
               >
                 {t("rules")}
               </button>
             </DialogTrigger>
-            <DialogContent className="border-outline-variant/40 bg-surface-container">
+            <DialogContent className="border-line-strong/40 bg-panel">
               <DialogHeader>
-                <DialogTitle className="text-headline-sm text-on-surface">
+                <DialogTitle className="text-headline-sm text-ink">
                   {game.name}
                 </DialogTitle>
-                <DialogDescription className="text-body-sm text-on-surface-variant">
+                <DialogDescription className="text-body-sm text-ink-muted">
                   {tDescriptions(game.name)}
                 </DialogDescription>
               </DialogHeader>
-              <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-surface-container-highest">
+              <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-panel-highest">
                 <Image
                   src={game.image}
                   alt={game.name}
@@ -108,7 +108,7 @@ export default function GameCard({ game }: GameCardProps) {
 
           <Link
             href={`/${game.slug}`}
-            className="flex-1 rounded-lg bg-primary py-1.5 text-center text-label-md font-semibold text-on-primary transition-colors hover:bg-primary-container hover:text-on-primary-container focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:outline-none"
+            className="flex-1 rounded-lg bg-honey py-1.5 text-center text-label-md font-semibold text-on-honey transition-colors hover:bg-honey-strong hover:text-on-honey-strong focus-visible:ring-2 focus-visible:ring-honey/40 focus-visible:outline-none"
           >
             {t("play")}
           </Link>

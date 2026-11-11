@@ -73,15 +73,15 @@ export default function GameLibrary() {
   return (
     <section id="juegos" className="flex w-full flex-col gap-4">
       <div className="flex flex-col gap-1">
-        <h2 className="text-headline-lg text-on-surface">{t("title")}</h2>
-        <p className="text-body-sm text-on-surface-variant">{t("subtitle")}</p>
+        <h2 className="text-headline-lg text-ink">{t("title")}</h2>
+        <p className="text-body-sm text-ink-muted">{t("subtitle")}</p>
       </div>
 
-      <div className="flex w-full flex-col gap-4 rounded-xl bg-surface-container p-4 shadow-md">
+      <div className="flex w-full flex-col gap-4 rounded-xl bg-panel p-4 shadow-md">
         <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-4">
           <div className="relative flex-1">
             <Search
-              className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-outline"
+              className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-ink-faint"
               aria-hidden="true"
             />
             <input
@@ -90,16 +90,16 @@ export default function GameLibrary() {
               onChange={(event) => setQuery(event.target.value)}
               placeholder={t("searchPlaceholder")}
               aria-label={t("searchLabel")}
-              className="w-full rounded-lg bg-surface-container-lowest py-2.5 pr-4 pl-10 text-body-md text-on-surface placeholder:text-outline focus:ring-2 focus:ring-primary/40 focus:outline-none"
+              className="w-full rounded-lg bg-panel-lowest py-2.5 pr-4 pl-10 text-body-md text-ink placeholder:text-ink-faint focus:ring-2 focus:ring-honey/40 focus:outline-none"
             />
           </div>
-          <span className="text-label-sm text-outline sm:text-right">
+          <span className="text-label-sm text-ink-faint sm:text-right">
             {t("results", { count: filteredGames.length })}
           </span>
         </div>
 
         <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">
-          <span className="text-label-sm uppercase tracking-wider text-outline">
+          <span className="text-label-sm uppercase tracking-wider text-ink-faint">
             {t("playersLabel")}
           </span>
           <div className="flex flex-wrap gap-2">
@@ -110,10 +110,10 @@ export default function GameLibrary() {
                 onClick={() => setPlayer(filter)}
                 aria-pressed={player === filter}
                 className={cn(
-                  "flex min-h-11 items-center rounded-lg px-3 py-1 text-label-sm transition-colors focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:outline-none sm:min-h-8",
+                  "flex min-h-11 items-center rounded-lg px-3 py-1 text-label-sm transition-colors focus-visible:ring-2 focus-visible:ring-honey/40 focus-visible:outline-none sm:min-h-8",
                   player === filter
-                    ? "bg-primary font-semibold text-on-primary"
-                    : "bg-surface-container-highest text-on-surface-variant hover:text-on-surface",
+                    ? "bg-honey font-semibold text-on-honey"
+                    : "bg-panel-highest text-ink-muted hover:text-ink",
                 )}
               >
                 {tPlayerFilters(filter)}
@@ -123,7 +123,7 @@ export default function GameLibrary() {
         </div>
 
         <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">
-          <span className="text-label-sm uppercase tracking-wider text-outline">
+          <span className="text-label-sm uppercase tracking-wider text-ink-faint">
             {t("categoryLabel")}
           </span>
           <div className="flex flex-wrap gap-2">
@@ -134,10 +134,10 @@ export default function GameLibrary() {
                 onClick={() => setCategory(filter)}
                 aria-pressed={category === filter}
                 className={cn(
-                  "flex min-h-11 items-center rounded-full px-3 py-1 text-label-sm transition-colors focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:outline-none sm:min-h-8",
+                  "flex min-h-11 items-center rounded-full px-3 py-1 text-label-sm transition-colors focus-visible:ring-2 focus-visible:ring-honey/40 focus-visible:outline-none sm:min-h-8",
                   category === filter
-                    ? "bg-primary text-on-primary"
-                    : "bg-surface-container-low text-on-surface hover:bg-surface-container-highest",
+                    ? "bg-honey text-on-honey"
+                    : "bg-panel-low text-ink hover:bg-panel-highest",
                 )}
               >
                 {tCategories(filter)}
@@ -154,15 +154,15 @@ export default function GameLibrary() {
           ))}
         </div>
       ) : (
-        <div className="flex flex-col items-center gap-2 rounded-xl bg-surface-container p-8 text-center shadow-md">
-          <p className="text-headline-sm text-on-surface">{t("emptyTitle")}</p>
-          <p className="text-body-sm text-on-surface-variant">
+        <div className="flex flex-col items-center gap-2 rounded-xl bg-panel p-8 text-center shadow-md">
+          <p className="text-headline-sm text-ink">{t("emptyTitle")}</p>
+          <p className="text-body-sm text-ink-muted">
             {t("emptyHint")}
           </p>
           <button
             type="button"
             onClick={resetFilters}
-            className="mt-2 flex min-h-11 items-center rounded-lg bg-primary px-4 py-2 text-label-md font-semibold text-on-primary transition-colors hover:bg-primary-container hover:text-on-primary-container focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:outline-none"
+            className="mt-2 flex min-h-11 items-center rounded-lg bg-honey px-4 py-2 text-label-md font-semibold text-on-honey transition-colors hover:bg-honey-strong hover:text-on-honey-strong focus-visible:ring-2 focus-visible:ring-honey/40 focus-visible:outline-none"
           >
             {t("clearFilters")}
           </button>

@@ -27,24 +27,24 @@ export default function CompanionPanel() {
 
   return (
     <aside className="flex w-full flex-col gap-6">
-      <div className="bg-surface-container flex flex-col gap-4 rounded-xl p-4 shadow-lg">
+      <div className="bg-panel flex flex-col gap-4 rounded-xl p-4 shadow-lg">
         <div className="flex flex-col gap-1">
-          <h2 className="text-headline-sm text-on-surface">{t("howTitle")}</h2>
-          <p className="text-body-sm text-on-surface-variant">
+          <h2 className="text-headline-sm text-ink">{t("howTitle")}</h2>
+          <p className="text-body-sm text-ink-muted">
             {t("howSubtitle")}
           </p>
         </div>
         <ol className="flex flex-col gap-4">
           {steps.map((step, index) => (
             <li key={step.titleKey} className="flex items-start gap-3">
-              <span className="bg-primary/15 text-label-sm text-primary flex h-7 w-7 shrink-0 items-center justify-center rounded-full">
+              <span className="bg-honey/15 text-label-sm text-honey flex h-7 w-7 shrink-0 items-center justify-center rounded-full">
                 {index + 1}
               </span>
               <div className="flex flex-col gap-0.5">
-                <span className="text-body-md text-on-surface font-semibold">
+                <span className="text-body-md text-ink font-semibold">
                   {t(step.titleKey)}
                 </span>
-                <span className="text-body-sm text-on-surface-variant">
+                <span className="text-body-sm text-ink-muted">
                   {t(step.descriptionKey)}
                 </span>
               </div>
@@ -53,12 +53,12 @@ export default function CompanionPanel() {
         </ol>
       </div>
 
-      <div className="bg-surface-container flex flex-col gap-4 rounded-xl p-4 shadow-lg">
+      <div className="bg-panel flex flex-col gap-4 rounded-xl p-4 shadow-lg">
         <div className="flex flex-col gap-1">
-          <h2 className="text-headline-sm text-on-surface">
+          <h2 className="text-headline-sm text-ink">
             {t("helpersTitle")}
           </h2>
-          <p className="text-body-sm text-on-surface-variant">
+          <p className="text-body-sm text-ink-muted">
             {t("helpersSubtitle")}
           </p>
         </div>
@@ -70,21 +70,21 @@ export default function CompanionPanel() {
                 <Link
                   href={`/${game.slug}`}
                   aria-label={`${t("open")} ${game.name}`}
-                  className="bg-surface-container-low hover:bg-surface-container-high focus-visible:ring-primary/40 flex items-center justify-between rounded-lg p-3 transition-colors focus-visible:ring-2 focus-visible:outline-none"
+                  className="bg-panel-low hover:bg-panel-high focus-visible:ring-honey/40 flex items-center justify-between rounded-lg p-3 transition-colors focus-visible:ring-2 focus-visible:outline-none"
                 >
                   <span className="flex items-center gap-3">
-                    <Icon className="text-primary size-4" aria-hidden="true" />
+                    <Icon className="text-honey size-4" aria-hidden="true" />
                     <span className="flex flex-col">
-                      <span className="text-body-md text-on-surface font-semibold">
+                      <span className="text-body-md text-ink font-semibold">
                         {game.name}
                       </span>
-                      <span className="text-label-sm text-outline tracking-wider uppercase">
+                      <span className="text-label-sm text-ink-faint tracking-wider uppercase">
                         {tCategories(game.category)}
                       </span>
                     </span>
                   </span>
                   <ChevronRight
-                    className="text-outline size-4"
+                    className="text-ink-faint size-4"
                     aria-hidden="true"
                   />
                 </Link>

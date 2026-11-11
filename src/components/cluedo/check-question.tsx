@@ -25,11 +25,11 @@ export function CheckQuestion({
       type="button"
       onClick={handleClick}
       className={cn(
-        "bg-surface-container-high text-outline border-outline-variant dark:bg-surface-container-high",
+        "bg-panel-high text-ink-faint border-line-strong dark:bg-panel-high rounded-sm",
         step === 1 &&
-          "border-primary/50 bg-primary/15 text-primary dark:bg-primary/15",
+          "border-honey/50 bg-honey/15 text-honey dark:bg-honey/15 border",
         step === 2 &&
-          "border-secondary bg-secondary text-on-secondary dark:bg-secondary",
+          "border-baize/50 bg-baize/15 text-baize dark:bg-baize/15 border",
         "cursor-pointer",
         className,
       )}

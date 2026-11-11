@@ -18,18 +18,18 @@ export default function Header() {
 
   const navLinkClass = (href: string) =>
     cn(
-      "flex min-h-11 items-center rounded-lg px-4 py-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 lg:min-h-0",
+      "flex min-h-11 items-center rounded-lg px-4 py-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-honey/40 lg:min-h-0",
       pathname === href
-        ? "bg-surface-container-high font-semibold text-primary"
-        : "text-on-surface-variant hover:bg-surface-container hover:text-on-surface",
+        ? "bg-panel-high font-semibold text-honey"
+        : "text-ink-muted hover:bg-panel hover:text-ink",
     );
 
   return (
-    <header className="border-outline-variant/40 bg-surface-container-lowest/90 sticky top-0 z-50 w-full border-b backdrop-blur-xl">
+    <header className="border-line-strong/40 bg-panel-lowest/90 sticky top-0 z-50 w-full border-b backdrop-blur-xl">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="focus-visible:ring-primary/40 flex items-center gap-3 rounded-lg focus-visible:ring-2 focus-visible:outline-none"
+          className="focus-visible:ring-honey/40 flex items-center gap-3 rounded-lg focus-visible:ring-2 focus-visible:outline-none"
         >
           <span className="relative h-10 w-10 shrink-0">
             <Image
@@ -40,7 +40,7 @@ export default function Header() {
               className="rounded-lg object-contain"
             />
           </span>
-          <span className="text-headline-sm text-primary font-semibold tracking-tight">
+          <span className="text-headline-sm text-honey font-semibold tracking-tight">
             Board Game Helper
           </span>
         </Link>
@@ -62,7 +62,7 @@ export default function Header() {
         </div>
       </div>
 
-      <nav className="border-outline-variant/30 overflow-x-auto border-t px-4 py-2 lg:hidden">
+      <nav className="border-line-strong/30 overflow-x-auto border-t px-4 py-2 lg:hidden">
         <div className="flex items-center gap-1">
           {navItems.map((item) => (
             <Link

@@ -47,9 +47,9 @@ export default function CheckTable({ thingsList, category }: CheckTableProps) {
           <TableRow
             key={index}
             className={cn(
-              "border-outline-variant/20 text-on-surface hover:bg-surface-container-high/60",
-              steps[index] === 1 && "bg-yellow-100 dark:bg-yellow-900/40",
-              steps[index] === 2 && "bg-blue-100 dark:bg-blue-900/40",
+              "border-line-strong/20 text-ink hover:bg-panel-high/60",
+              steps[index] === 1 && "bg-honey/15",
+              steps[index] === 2 && "bg-baize/20",
             )}
           >
             <TableCell className="w-[70%] font-medium">

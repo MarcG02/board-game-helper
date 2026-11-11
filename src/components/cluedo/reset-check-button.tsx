@@ -42,8 +42,8 @@ export default function ResetChecksButton({ category }: Props) {
       className={cn(
         "ml-auto cursor-pointer",
         category === "All"
-          ? "dark:bg-destructive dark:hover:bg-destructive/90"
-          : "border-outline-variant/40 bg-surface-container-high text-on-surface hover:bg-surface-container-highest dark:bg-surface-container-high dark:hover:bg-surface-container-highest",
+          ? "dark:bg-danger dark:hover:bg-danger/90"
+          : "border-line-strong/40 bg-panel-high text-ink hover:bg-panel-highest dark:bg-panel-high dark:hover:bg-panel-highest",
       )}
       onClick={handleReset}
     >

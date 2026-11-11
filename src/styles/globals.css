@@ -24,193 +24,173 @@
   --radius-3xl: 1.5rem;
   --radius-full: 9999px;
 
-  /* shadcn/ui semantic colors */
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
+  /* Base colors (shadcn/ui compatible) */
+  --color-canvas: var(--canvas);
+  --color-ink: var(--ink);
+  --color-panel-low: var(--panel-low);
+  --color-panel: var(--panel);
+  --color-panel-high: var(--panel-high);
+  --color-ink-subtle: var(--ink-subtle);
+  --color-honey: var(--honey);
+  --color-on-honey: var(--on-honey);
+  --color-baize: var(--baize);
+  --color-baize-light: var(--baize-light);
+  --color-danger: var(--danger);
+  --color-on-danger: var(--on-danger);
+  --color-line: var(--line);
+  --color-field: var(--field);
+  --color-focus: var(--focus);
 
-  /* Material-style surface + content roles */
-  --color-surface: var(--surface);
-  --color-surface-dim: var(--surface-dim);
-  --color-surface-bright: var(--surface-bright);
-  --color-surface-container-lowest: var(--surface-container-lowest);
-  --color-surface-container-low: var(--surface-container-low);
-  --color-surface-container: var(--surface-container);
-  --color-surface-container-high: var(--surface-container-high);
-  --color-surface-container-highest: var(--surface-container-highest);
-  --color-surface-variant: var(--surface-variant);
-  --color-surface-tint: var(--surface-tint);
-  --color-on-surface: var(--on-surface);
-  --color-on-surface-variant: var(--on-surface-variant);
-  --color-on-background: var(--on-background);
-  --color-inverse-surface: var(--inverse-surface);
-  --color-inverse-on-surface: var(--inverse-on-surface);
-  --color-outline: var(--outline);
-  --color-outline-variant: var(--outline-variant);
+  /* Canvas and panel depth */
+  --color-canvas-dim: var(--canvas-dim);
+  --color-panel-bright: var(--panel-bright);
+  --color-panel-lowest: var(--panel-lowest);
+  --color-panel-highest: var(--panel-highest);
+  --color-panel-variant: var(--panel-variant);
+  --color-panel-inverse: var(--panel-inverse);
+  --color-honey-tint: var(--honey-tint);
 
-  /* Primary — warm amber */
-  --color-primary-container: var(--primary-container);
-  --color-on-primary: var(--on-primary);
-  --color-on-primary-container: var(--on-primary-container);
-  --color-inverse-primary: var(--inverse-primary);
-  --color-primary-fixed: var(--primary-fixed);
-  --color-primary-fixed-dim: var(--primary-fixed-dim);
-  --color-on-primary-fixed: var(--on-primary-fixed);
-  --color-on-primary-fixed-variant: var(--on-primary-fixed-variant);
+  /* Content on canvas and panels */
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-faint: var(--ink-faint);
+  --color-ink-inverse: var(--ink-inverse);
+  --color-line-strong: var(--line-strong);
 
-  /* Secondary — baize green */
-  --color-secondary-container: var(--secondary-container);
-  --color-on-secondary: var(--on-secondary);
-  --color-on-secondary-container: var(--on-secondary-container);
-  --color-secondary-fixed: var(--secondary-fixed);
-  --color-secondary-fixed-dim: var(--secondary-fixed-dim);
-  --color-on-secondary-fixed: var(--on-secondary-fixed);
-  --color-on-secondary-fixed-variant: var(--on-secondary-fixed-variant);
+  /* Honey — warm amber (primary accent) */
+  --color-honey-strong: var(--honey-strong);
+  --color-on-honey-strong: var(--on-honey-strong);
+  --color-honey-deep: var(--honey-deep);
+  --color-honey-soft: var(--honey-soft);
+  --color-honey-soft-dim: var(--honey-soft-dim);
+  --color-on-honey-soft: var(--on-honey-soft);
+  --color-on-honey-soft-variant: var(--on-honey-soft-variant);
 
-  /* Tertiary — terracotta ember */
-  --color-tertiary: var(--tertiary);
-  --color-on-tertiary: var(--on-tertiary);
-  --color-tertiary-container: var(--tertiary-container);
-  --color-on-tertiary-container: var(--on-tertiary-container);
-  --color-tertiary-fixed: var(--tertiary-fixed);
-  --color-tertiary-fixed-dim: var(--tertiary-fixed-dim);
-  --color-on-tertiary-fixed: var(--on-tertiary-fixed);
-  --color-on-tertiary-fixed-variant: var(--on-tertiary-fixed-variant);
+  /* Baize — green felt (secondary accent) */
+  --color-baize-strong: var(--baize-strong);
+  --color-on-baize: var(--on-baize);
+  --color-on-baize-strong: var(--on-baize-strong);
+  --color-baize-soft: var(--baize-soft);
+  --color-baize-soft-dim: var(--baize-soft-dim);
+  --color-on-baize-soft: var(--on-baize-soft);
+  --color-on-baize-soft-variant: var(--on-baize-soft-variant);
 
-  /* Error */
-  --color-error: var(--error);
-  --color-on-error: var(--on-error);
-  --color-error-container: var(--error-container);
-  --color-on-error-container: var(--on-error-container);
+  /* Ember — terracotta (tertiary accent) */
+  --color-ember: var(--ember);
+  --color-on-ember: var(--on-ember);
+  --color-ember-strong: var(--ember-strong);
+  --color-on-ember-strong: var(--on-ember-strong);
+  --color-ember-soft: var(--ember-soft);
+  --color-ember-soft-dim: var(--ember-soft-dim);
+  --color-on-ember-soft: var(--on-ember-soft);
+  --color-on-ember-soft-variant: var(--on-ember-soft-variant);
+
+  /* Danger — errors and destructive actions */
+  --color-danger-strong: var(--danger-strong);
+  --color-on-danger-strong: var(--on-danger-strong);
 
   /* Charts */
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
+  --color-chart-honey: var(--chart-honey);
+  --color-chart-baize: var(--chart-baize);
+  --color-chart-ember: var(--chart-ember);
+  --color-chart-honey-soft: var(--chart-honey-soft);
+  --color-chart-baize-soft: var(--chart-baize-soft);
 
   /* Sidebar (shadcn compatibility) */
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-panel: var(--sidebar-panel);
+  --color-sidebar-ink: var(--sidebar-ink);
+  --color-sidebar-honey: var(--sidebar-honey);
+  --color-sidebar-on-honey: var(--sidebar-on-honey);
+  --color-sidebar-raised: var(--sidebar-raised);
+  --color-sidebar-line: var(--sidebar-line);
+  --color-sidebar-focus: var(--sidebar-focus);
 }
 
 :root {
   color-scheme: dark;
 
-  /* Base surfaces */
-  --background: #151311;
-  --foreground: #e8e1dd;
-  --surface: #151311;
-  --surface-dim: #151311;
-  --surface-bright: #3c3936;
-  --surface-container-lowest: #100e0c;
-  --surface-container-low: #1d1b19;
-  --surface-container: #211f1d;
-  --surface-container-high: #2c2927;
-  --surface-container-highest: #373432;
-  --surface-variant: #373432;
-  --surface-tint: #fabc4d;
-  --on-surface: #e8e1dd;
-  --on-surface-variant: #d4c4b0;
-  --on-background: #e8e1dd;
-  --inverse-surface: #e8e1dd;
-  --inverse-on-surface: #33302d;
-  --outline: #9d8f7c;
-  --outline-variant: #504535;
+  /* Naming: --<hue> is the base accent, -strong its container surface,
+     -soft its light variant, and on-* the content placed on top of it.
+     Panels run from lowest (most recessed) to highest (most elevated). */
 
-  /* Primary — warm amber */
-  --primary: #ffc665;
-  --primary-foreground: #432c00;
-  --on-primary: #432c00;
-  --primary-container: #e5a93c;
-  --on-primary-container: #5e4000;
-  --inverse-primary: #7e5700;
-  --primary-fixed: #ffdead;
-  --primary-fixed-dim: #fabc4d;
-  --on-primary-fixed: #281900;
-  --on-primary-fixed-variant: #604100;
+  /* Canvas and panel depth */
+  --canvas: #151311;
+  --canvas-dim: #151311;
+  --panel-lowest: #100e0c;
+  --panel-low: #1d1b19;
+  --panel: #211f1d;
+  --panel-high: #2c2927;
+  --panel-highest: #373432;
+  --panel-variant: #373432;
+  --panel-bright: #3c3936;
+  --panel-inverse: #e8e1dd;
 
-  /* Secondary — baize green */
-  --secondary: #016c47;
-  --secondary-foreground: #93ebbb;
-  --on-secondary: #003823;
-  --secondary-container: #016c47;
-  --on-secondary-container: #93ebbb;
-  --secondary-fixed: #9df5c5;
-  --secondary-fixed-dim: #81d8aa;
-  --on-secondary-fixed: #002112;
-  --on-secondary-fixed-variant: #005234;
+  /* Content on canvas and panels */
+  --ink: #e8e1dd;
+  --ink-muted: #d4c4b0;
+  --ink-subtle: #a89f91;
+  --ink-faint: #9d8f7c;
+  --ink-inverse: #33302d;
 
-  /* Tertiary — terracotta ember */
-  --tertiary: #ffc1b0;
-  --on-tertiary: #601500;
-  --tertiary-container: #ff997c;
-  --on-tertiary-container: #852100;
-  --tertiary-fixed: #ffdbd1;
-  --tertiary-fixed-dim: #ffb5a0;
-  --on-tertiary-fixed: #3b0900;
-  --on-tertiary-fixed-variant: #862201;
+  /* Lines, fields and focus */
+  --line: #35312b;
+  --line-strong: #504535;
+  --field: #35312b;
+  --focus: #e5a93c;
 
-  /* Error + destructive */
-  --error: #ffb4ab;
-  --on-error: #690005;
-  --error-container: #93000a;
-  --on-error-container: #ffdad6;
-  --destructive: #ffb4ab;
-  --destructive-foreground: #690005;
+  /* Honey — warm amber (primary accent) */
+  --honey: #ffc665;
+  --on-honey: #432c00;
+  --honey-strong: #e5a93c;
+  --on-honey-strong: #5e4000;
+  --honey-deep: #7e5700;
+  --honey-soft: #ffdead;
+  --honey-soft-dim: #fabc4d;
+  --honey-tint: #fabc4d;
+  --on-honey-soft: #281900;
+  --on-honey-soft-variant: #604100;
 
-  /* shadcn/ui semantic surfaces */
-  --card: #1d1b19;
-  --card-foreground: #e8e1dd;
-  --popover: #211f1d;
-  --popover-foreground: #e8e1dd;
-  --muted: #211f1d;
-  --muted-foreground: #a89f91;
-  --accent: #2c2927;
-  --accent-foreground: #e8e1dd;
-  --border: #35312b;
-  --input: #35312b;
-  --ring: #e5a93c;
+  /* Baize — green felt (secondary accent) */
+  --baize: #016c47;
+  --baize-light: #93ebbb;
+  --on-baize: #003823;
+  --baize-strong: #016c47;
+  --on-baize-strong: #93ebbb;
+  --baize-soft: #9df5c5;
+  --baize-soft-dim: #81d8aa;
+  --on-baize-soft: #002112;
+  --on-baize-soft-variant: #005234;
+
+  /* Ember — terracotta (tertiary accent) */
+  --ember: #ffc1b0;
+  --on-ember: #601500;
+  --ember-strong: #ff997c;
+  --on-ember-strong: #852100;
+  --ember-soft: #ffdbd1;
+  --ember-soft-dim: #ffb5a0;
+  --on-ember-soft: #3b0900;
+  --on-ember-soft-variant: #862201;
+
+  /* Danger — errors and destructive actions */
+  --danger: #ffb4ab;
+  --on-danger: #690005;
+  --danger-strong: #93000a;
+  --on-danger-strong: #ffdad6;
 
   /* Charts */
-  --chart-1: #ffc665;
-  --chart-2: #81d8aa;
-  --chart-3: #ff997c;
-  --chart-4: #fabc4d;
-  --chart-5: #9df5c5;
+  --chart-honey: #ffc665;
+  --chart-baize: #81d8aa;
+  --chart-ember: #ff997c;
+  --chart-honey-soft: #fabc4d;
+  --chart-baize-soft: #9df5c5;
 
   /* Sidebar */
-  --sidebar: #1d1b19;
-  --sidebar-foreground: #e8e1dd;
-  --sidebar-primary: #ffc665;
-  --sidebar-primary-foreground: #432c00;
-  --sidebar-accent: #2c2927;
-  --sidebar-accent-foreground: #e8e1dd;
-  --sidebar-border: #35312b;
-  --sidebar-ring: #e5a93c;
+  --sidebar-panel: #1d1b19;
+  --sidebar-ink: #e8e1dd;
+  --sidebar-honey: #ffc665;
+  --sidebar-on-honey: #432c00;
+  --sidebar-raised: #2c2927;
+  --sidebar-line: #35312b;
+  --sidebar-focus: #e5a93c;
 
   /* Spacing rhythm (4px / 8px base) */
   --gutter: 1rem;
@@ -231,11 +211,11 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-line outline-focus/50;
   }
 
   body {
-    @apply bg-background text-foreground antialiased;
+    @apply bg-canvas text-ink antialiased;
     font-family: var(--font-sans);
   }
 }
