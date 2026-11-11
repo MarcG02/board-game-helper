@@ -9,7 +9,9 @@ import CheckTable from "./check-table";
 import ResetChecksButton from "./reset-check-button";
 
 const tabTriggerClass =
-  "h-9 rounded-full text-body-sm text-ink-muted dark:text-ink-muted " +
+  "h-9 cursor-pointer rounded-full text-body-sm transition-colors " +
+  "text-ink-muted dark:text-ink-muted " +
+  "hover:bg-honey hover:text-on-honey dark:hover:bg-honey dark:hover:text-on-honey " +
   "data-[state=active]:bg-honey data-[state=active]:text-on-honey data-[state=active]:shadow-md " +
   "dark:data-[state=active]:border-honey dark:data-[state=active]:bg-honey dark:data-[state=active]:text-on-honey " +
   "focus-visible:ring-2 focus-visible:ring-honey/40";

@@ -41,7 +41,7 @@ export default function CheckTable({ thingsList, category }: CheckTableProps) {
 
   return (
     <Table>
-      <TableHeader></TableHeader>
+      <TableHeader />
       <TableBody>
         {thingsList.map((thing, index) => (
           <TableRow
