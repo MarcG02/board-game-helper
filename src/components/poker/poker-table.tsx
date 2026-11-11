@@ -17,27 +17,34 @@ export default function PokerTable() {
   const tTitles = useTranslations("Poker.Titles");
 
   return (
-    <Table className="rounded-md bg-white p-2">
-      <TableHeader className="rounded-md bg-gray-900">
-        <TableRow>
-          <TableHead className="font-bold text-white">
-            {tTitles("plays")}
-          </TableHead>
-          <TableHead className="font-bold text-white">
-            {tTitles("desc")}
-          </TableHead>
-        </TableRow>
-      </TableHeader>
-      <TableBody>
-        {pokerNamesList.map((key) => (
-          <TableRow key={key} className="border-t border-gray-200">
-            <TableCell className="border-r border-gray-200 font-bold">
-              {tNames(key)}
-            </TableCell>
-            <TableCell>{tDescriptions(key)}</TableCell>
+    <section className="border-line-strong/20 bg-panel flex w-full flex-col gap-4 overflow-hidden rounded-xl border p-4 shadow-lg sm:p-6">
+      <Table>
+        <TableHeader className="[&_th]:bg-panel-high [&_th:first-child]:rounded-l-md [&_th:last-child]:rounded-r-md">
+          <TableRow className="border-line-strong/20 hover:bg-transparent">
+            <TableHead className="text-ink-muted text-label-md font-semibold tracking-wider uppercase">
+              {tTitles("plays")}
+            </TableHead>
+            <TableHead className="text-ink-muted text-label-md font-semibold tracking-wider uppercase">
+              {tTitles("desc")}
+            </TableHead>
           </TableRow>
-        ))}
-      </TableBody>
-    </Table>
+        </TableHeader>
+        <TableBody>
+          {pokerNamesList.map((key) => (
+            <TableRow
+              key={key}
+              className="border-line-strong/20 hover:bg-panel-high/60"
+            >
+              <TableCell className="text-ink w-[30%] font-semibold whitespace-normal">
+                {tNames(key)}
+              </TableCell>
+              <TableCell className="text-ink-muted whitespace-normal">
+                {tDescriptions(key)}
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </section>
   );
 }
