@@ -1,6 +1,5 @@
 "use client";
 
-import { useGamesContext } from "@/lib/hooks";
 import {
   Table,
   TableBody,
@@ -19,7 +18,6 @@ import { yahtzeeCalculation } from "@/lib/utils";
 const faces = ["A", "K", "Q", "J", "R", "N"];
 
 export default function ScoreTable() {
-  const { username } = useGamesContext();
   const [scores1, setScores1] = useState<Record<string, number>>({});
   const [scores2, setScores2] = useState<Record<string, number>>({});
 
@@ -44,56 +42,61 @@ export default function ScoreTable() {
   // };
 
   return (
-    <div className="flex h-full w-full flex-col content-center justify-center gap-4 text-center">
-      <h1 className="text-4xl font-bold">{username}</h1>
-      <div className="overflow-hidden rounded-2xl border-2">
-        <Table className="w-full border-collapse">
-          <TableHeader>
-            <TableRow>
-              <TableHead className="text-center text-lg font-bold">
-                Faces
-              </TableHead>
-              <TableHead className="text-center text-lg font-bold" colSpan={2}>
-                Nº matching faces
-              </TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {faces.map((face) => (
-              <TableRow key={face}>
-                <TableCell className="font-bold">{face}</TableCell>
-                <TableCell className="w-32 border-b">
-                  <NumberInput
-                    inputName={face + "1"}
-                    onChange={handleScoreChange}
-                  />
-                </TableCell>
-                <TableCell className="w-32 border-b">
-                  <NumberInput
-                    inputName={face + "2"}
-                    onChange={handleScoreChange}
-                  />
-                </TableCell>
-              </TableRow>
-            ))}
-            <TableRow>
-              <TableCell className="font-bold">Round total</TableCell>
-              <TableCell className="font-bold">
-                <SimpleCard>{totalScore1}</SimpleCard>
+    <div className="border-line-strong/20 bg-panel-low w-full overflow-hidden rounded-xl border p-4">
+      <Table className="w-full">
+        <TableHeader className="[&_th]:bg-panel-high [&_th:first-child]:rounded-l-md [&_th:last-child]:rounded-r-md">
+          <TableRow className="border-line-strong/20 rounded-sm hover:bg-transparent">
+            <TableHead className="text-ink-muted text-label-md font-semibold tracking-wider uppercase">
+              Faces
+            </TableHead>
+            <TableHead
+              className="text-ink-muted text-label-md font-semibold tracking-wider uppercase"
+              colSpan={2}
+            >
+              Nº matching faces
+            </TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {faces.map((face) => (
+            <TableRow
+              key={face}
+              className="border-line-strong/20 hover:bg-panel-high/60"
+            >
+              <TableCell className="text-ink font-semibold">{face}</TableCell>
+              <TableCell className="w-32">
+                <NumberInput
+                  inputName={face + "1"}
+                  onChange={handleScoreChange}
+                />
               </TableCell>
-              <TableCell className="font-bold">
-                <SimpleCard>{totalScore2}</SimpleCard>
+              <TableCell className="w-32">
+                <NumberInput
+                  inputName={face + "2"}
+                  onChange={handleScoreChange}
+                />
               </TableCell>
             </TableRow>
-            <TableRow>
-              <TableCell className="font-bold">Total</TableCell>
-              <TableCell className="font-bold" colSpan={2}>
-                <SimpleCard>{totalScore1 + totalScore2 || "-"}</SimpleCard>
-              </TableCell>
-            </TableRow>
-          </TableBody>
-        </Table>
-      </div>
+          ))}
+          <TableRow>
+            <TableCell className="text-ink font-semibold">
+              Round total
+            </TableCell>
+            <TableCell className="font-bold">
+              <SimpleCard>{totalScore1}</SimpleCard>
+            </TableCell>
+            <TableCell className="font-bold">
+              <SimpleCard>{totalScore2}</SimpleCard>
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className="text-ink font-semibold">Total</TableCell>
+            <TableCell className="font-bold" colSpan={2}>
+              <SimpleCard>{totalScore1 + totalScore2 || "-"}</SimpleCard>
+            </TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>
       {/* <Button
         variant="destructive"
         onClick={resetScores}
