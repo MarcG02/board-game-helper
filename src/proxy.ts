@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { routing } from "@/i18n/routing";
 
 // next-intl resolves the active locale on the server from this request header.
-// Its own middleware sets it; this custom middleware must do the same.
+// Its own proxy sets it; this custom proxy must do the same.
 const LOCALE_HEADER = "X-NEXT-INTL-LOCALE";
 const LOCALE_COOKIE = "NEXT_LOCALE";
 
@@ -17,7 +17,7 @@ function getPreferredLocale(request: NextRequest) {
   );
 }
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   const pathLocale = routing.locales.find(
