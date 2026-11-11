@@ -16,7 +16,7 @@ export default function HomeHero() {
 
   return (
     <section className="bg-surface-container relative w-full overflow-hidden rounded-xl p-6 shadow-xl">
-      <div className="from-surface-container-lowest/80 to-primary/5 pointer-events-none absolute inset-0 bg-gradient-to-r via-transparent" />
+      <div className="from-surface-container-lowest/80 to-primary/5 pointer-events-none absolute inset-0 bg-linear-to-r via-transparent" />
       <div className="relative z-10 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
         <div className="flex max-w-xl flex-col gap-4">
           <div className="flex flex-wrap items-center gap-3">

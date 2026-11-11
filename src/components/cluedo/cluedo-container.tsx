@@ -1,80 +1,70 @@
 "use client";
 
-import { charList, locationList, weaponList } from "@/lib/constants";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
-import CheckTable from "./check-table";
 import { useTranslations } from "next-intl";
-import ResetChecksButton from "./reset-check-button";
-import { Separator } from "../ui/separator";
+import { charList, locationList, weaponList } from "@/lib/constants";
 import { useGamesContext } from "@/lib/hooks";
-import BackButton from "../back-button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
+import { Separator } from "../ui/separator";
+import CheckTable from "./check-table";
+import ResetChecksButton from "./reset-check-button";
+
+const tabTriggerClass =
+  "h-9 rounded-full text-body-sm text-on-surface-variant dark:text-on-surface-variant " +
+  "data-[state=active]:bg-primary data-[state=active]:text-on-primary data-[state=active]:shadow-md " +
+  "dark:data-[state=active]:border-primary dark:data-[state=active]:bg-primary dark:data-[state=active]:text-on-primary " +
+  "focus-visible:ring-2 focus-visible:ring-primary/40";
+
+const tabContentClass =
+  "flex flex-col gap-4 rounded-xl border border-outline-variant/20 bg-surface-container-low p-4 shadow-md";
 
 export default function CluedoContainer() {
   const tTabs = useTranslations("Cluedo.Tabs");
-
   const { activeTab, setActiveTab } = useGamesContext();
 
   return (
-    <div className="h-full w-full">
-      <BackButton />
-      <div className="h-full w-full rounded-md bg-gray-200 p-4">
-        <Tabs
-          value={activeTab}
-          onValueChange={setActiveTab}
-          className="h-full w-full space-y-4"
+    <section className="border-outline-variant/20 bg-surface-container flex w-full flex-col gap-6 rounded-xl border p-4 shadow-lg sm:p-6">
+      <Tabs
+        value={activeTab}
+        onValueChange={setActiveTab}
+        className="flex w-full flex-col gap-6"
+      >
+        <TabsList
+          aria-label={tTabs("label")}
+          className="border-outline-variant/20 bg-surface-container-high grid h-auto w-full max-w-md grid-cols-3 gap-1 self-center rounded-full border p-1 sm:self-start"
         >
-          <div className="flex justify-center">
-            <TabsList className="flex justify-center gap-2 rounded-md bg-white shadow-md">
-              <TabsTrigger
-                className="data-[state=active]:bg-gray-900 data-[state=active]:text-white"
-                value="characters"
-              >
-                {tTabs("chars")}
-              </TabsTrigger>
-              <TabsTrigger
-                className="data-[state=active]:bg-gray-900 data-[state=active]:text-white"
-                value="weapon"
-              >
-                {tTabs("weapons")}
-              </TabsTrigger>
-              <TabsTrigger
-                className="data-[state=active]:bg-gray-900 data-[state=active]:text-white"
-                value="location"
-              >
-                {tTabs("locations")}
-              </TabsTrigger>
-            </TabsList>
-          </div>
+          <TabsTrigger className={tabTriggerClass} value="characters">
+            {tTabs("chars")}
+          </TabsTrigger>
+          <TabsTrigger className={tabTriggerClass} value="weapon">
+            {tTabs("weapons")}
+          </TabsTrigger>
+          <TabsTrigger className={tabTriggerClass} value="location">
+            {tTabs("locations")}
+          </TabsTrigger>
+        </TabsList>
 
-          <TabsContent
-            value="characters"
-            className="rounded-md bg-white p-2 shadow"
-          >
-            <CheckTable thingsList={charList} category="Characters" />
-            <Separator className="mb-4" />
-            <ResetChecksButton category="Characters" />
-          </TabsContent>
+        <TabsContent value="characters" className={tabContentClass}>
+          <CheckTable thingsList={charList} category="Characters" />
+          <Separator className="bg-outline-variant/30" />
+          <ResetChecksButton category="Characters" />
+        </TabsContent>
 
-          <TabsContent
-            value="weapon"
-            className="rounded-md bg-white p-2 shadow-md"
-          >
-            <CheckTable thingsList={weaponList} category="Weapons" />
-            <Separator className="mb-4" />
-            <ResetChecksButton category="Weapons" />
-          </TabsContent>
+        <TabsContent value="weapon" className={tabContentClass}>
+          <CheckTable thingsList={weaponList} category="Weapons" />
+          <Separator className="bg-outline-variant/30" />
+          <ResetChecksButton category="Weapons" />
+        </TabsContent>
 
-          <TabsContent
-            value="location"
-            className="rounded-md bg-white p-2 shadow-md"
-          >
-            <CheckTable thingsList={locationList} category="Locations" />
-            <Separator className="mb-4" />
-            <ResetChecksButton category="Locations" />
-          </TabsContent>
+        <TabsContent value="location" className={tabContentClass}>
+          <CheckTable thingsList={locationList} category="Locations" />
+          <Separator className="bg-outline-variant/30" />
+          <ResetChecksButton category="Locations" />
+        </TabsContent>
+
+        <div className="border-outline-variant/30 border-t pt-4">
           <ResetChecksButton category="All" />
-        </Tabs>
-      </div>
-    </div>
+        </div>
+      </Tabs>
+    </section>
   );
 }

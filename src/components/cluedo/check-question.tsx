@@ -25,11 +25,12 @@ export function CheckQuestion({
       type="button"
       onClick={handleClick}
       className={cn(
-        "focus-visible:ring-ring/50 focus-visible:border-ring flex size-4 shrink-0 items-center justify-center rounded-[4px] border shadow-xs transition-shadow outline-none focus-visible:ring-2 disabled:cursor-not-allowed disabled:opacity-50",
-        "bg-background text-foreground border-input dark:bg-input/30",
+        "bg-surface-container-high text-outline border-outline-variant dark:bg-surface-container-high",
+        step === 1 &&
+          "border-primary/50 bg-primary/15 text-primary dark:bg-primary/15",
         step === 2 &&
-          "bg-primary text-primary-foreground border-primary dark:bg-primary",
-        step === 1 && "border-gray-900 bg-gray-900 text-white",
+          "border-secondary bg-secondary text-on-secondary dark:bg-secondary",
+        "cursor-pointer",
         className,
       )}
       {...props}

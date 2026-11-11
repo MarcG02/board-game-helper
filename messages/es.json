@@ -12,9 +12,9 @@
     "StartHelper": "Iniciar ayuda"
   },
   "GameDescs": {
-    "Cluedo": "Cluedo es un juego de mesa de detectives y misterio en el que los jugadores deben resolver un crimen ficticio usando su capacidad de deducción.",
-    "Poker": "El póker es un juego de cartas que se basa en la combinación de habilidad, estrategia y suerte, donde los jugadores compiten para formar la mejor mano posible según las reglas de la variante específica que estén jugando.",
-    "Yahtzee": "El 'Yahtzee' o 'La Generala' es un juego de dados en el que se lanzan cinco dados hasta tres veces por turno para lograr obtener el número máximo de dados de una misma cara."
+    "Cluedo": "Cluedo es un juego de mesa de detectives y misterio en el que los jugadores deben resolver un crimen ficticio utilizando su capacidad de deducción.",
+    "Poker": "El póker es un juego de cartas que combina habilidad, estrategia y suerte, en el que los jugadores compiten por formar la mejor mano posible según las reglas de la variante que estén jugando.",
+    "Yahtzee": "El 'Yahtzee' o 'La Generala' es un juego de dados en el que se lanzan cinco dados hasta tres veces por turno para conseguir el mayor número posible de dados con la misma cara."
   },
   "Cluedo": {
     "Tabs": {
@@ -22,9 +22,9 @@
       "weapons": "¿Qué arma?",
       "locations": "¿Dónde?"
     },
-    "Buttons": {
-      "reset": "Limpiar Tabla",
-      "resetAll": "Limpiar Tablas"
+    "Table": {
+      "reset": "Limpiar tabla",
+      "resetAll": "Limpiar tablas"
     }
   },
   "Poker": {
@@ -36,21 +36,21 @@
       "straight": "Escalera",
       "flush": "Color",
       "full": "Full",
-      "poker": "Poker",
+      "poker": "Póker",
       "straightFlush": "Escalera de color",
-      "royalFlush": "Escalera Real"
+      "royalFlush": "Escalera real"
     },
     "Descriptions": {
       "highCard": "2-3-4-5-6-7-8-9-10-J-Q-K-A",
       "pair": "2 + 2",
       "doublePair": "'4 + 4' + 'Q + Q'",
       "trio": "3 + 3 + 3",
-      "straight": "5 Consecutivas (el 'A' sólo puede ir al principio o final)",
-      "flush": "5 Cartas del mismo palo",
-      "full": "Pareja + Trío",
-      "poker": "4 Cartas iguales",
+      "straight": "5 consecutivas (el 'A' solo puede ir al principio o al final)",
+      "flush": "5 cartas del mismo palo",
+      "full": "Pareja + trío",
+      "poker": "4 cartas iguales",
       "straightFlush": "Escalera del mismo palo",
-      "royalFlush": "Escalera de color pero con: 10-J-Q-K-A"
+      "royalFlush": "Escalera de color con: 10-J-Q-K-A"
     },
     "Titles": {
       "plays": "Jugadas",
@@ -71,7 +71,7 @@
     "pipe": "Tubería de plomo",
     "gun": "Pistola",
     "rope": "Cuerda",
-    "wrench": "Herramienta"
+    "wrench": "Llave inglesa"
   },
   "Locations": {
     "danceRoom": "Sala de baile",
@@ -93,11 +93,11 @@
       "badge": "{count, plural, one {# juego disponible} other {# juegos disponibles}}",
       "tableReady": "Mesa lista",
       "title": "¿A qué jugamos hoy?",
-      "description": "Abrí el asistente de reglas, calculá puntajes o resolvé una partida sin perder el ritmo de la mesa.",
+      "description": "Abre el asistente de reglas, calcula las puntuaciones o resuelve una partida sin perder el ritmo de la mesa.",
       "randomLabel": "Juego al azar",
-      "randomIdle": "Tirar dado",
+      "randomIdle": "Tirar los dados",
       "randomResult": "Hoy toca {game}",
-      "timerLabel": "Temporizador de turno",
+      "timerLabel": "Temporizador del turno",
       "timerStart": "Iniciar temporizador",
       "timerPause": "Pausar temporizador",
       "timerReset": "Reiniciar temporizador",
@@ -121,13 +121,13 @@
       "playerFilters": {
         "all": "Todos",
         "one": "Solo (1)",
-        "two": "Dúo (2)",
+        "two": "Pareja (2)",
         "threeFour": "3-4",
         "fivePlus": "5+"
       },
       "results": "{count, plural, one {# juego} other {# juegos}}",
-      "emptyTitle": "No encontramos juegos con esos filtros.",
-      "emptyHint": "Probá con otra búsqueda o limpiá los filtros.",
+      "emptyTitle": "No hemos encontrado juegos con esos filtros.",
+      "emptyHint": "Prueba con otra búsqueda o limpia los filtros.",
       "clearFilters": "Limpiar filtros",
       "rules": "Reglas",
       "play": "Jugar",
@@ -136,27 +136,27 @@
       "variableDuration": "Duración variable"
     },
     "difficulty": {
-      "light": "Ligero",
-      "medium": "Medio",
+      "light": "Fácil",
+      "medium": "Media",
       "expert": "Experto"
     },
     "companion": {
       "howTitle": "¿Cómo funciona?",
       "howSubtitle": "Tres pasos para empezar.",
       "step1Title": "Elige un juego",
-      "step1Desc": "Filtra la biblioteca por jugadores o categoría.",
-      "step2Title": "Abrí el asistente",
+      "step1Desc": "Filtra la biblioteca por número de jugadores o categoría.",
+      "step2Title": "Abre el asistente",
       "step2Desc": "Cada juego tiene su propia herramienta de mesa.",
-      "step3Title": "Juega sin fricción",
-      "step3Desc": "Consulta reglas, calcula puntajes y sigue la partida.",
+      "step3Title": "Juega sin complicaciones",
+      "step3Desc": "Consulta las reglas, calcula las puntuaciones y sigue la partida.",
       "helpersTitle": "Asistentes disponibles",
       "helpersSubtitle": "Accesos directos a tus herramientas.",
       "tipTitle": "Consejo de mesa",
-      "tip": "Usa el temporizador para mantener el ritmo y el selector de juego al azar para destrabar una mesa indecisa.",
+      "tip": "Usa el temporizador para mantener el ritmo y el selector de juego al azar para decidir cuando no os pongáis de acuerdo.",
       "open": "Abrir"
     },
     "footer": {
-      "tagline": "El compañero definitivo para tus noches de juego de mesa.",
+      "tagline": "El compañero definitivo para tus noches de juegos de mesa.",
       "ready": "Mesa lista",
       "version": "v0.1.0"
     }
