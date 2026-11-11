@@ -6,7 +6,7 @@ type SimpleCardProps = {
 
 export default function SimpleCard({ children }: SimpleCardProps) {
   return (
-    <div className="flex h-full w-full items-center justify-center rounded-2xl border-2 text-xl font-bold">
+    <div className="border-line-strong/20 bg-panel-high text-ink flex h-full w-full items-center justify-center rounded-lg border px-3 py-2 text-headline-sm">
       {children}
     </div>
   );
