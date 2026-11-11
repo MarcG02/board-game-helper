@@ -6,6 +6,7 @@ import { Link, usePathname } from "@/navigation";
 import { games } from "@/lib/games";
 import { cn } from "@/lib/utils";
 import LanguageSelector from "./language-selector";
+import SidebarNav from "./home/mobile/sidebar-nav";
 
 export default function Header() {
   const t = useTranslations("HomePage.nav");
@@ -41,7 +42,7 @@ export default function Header() {
             />
           </span>
           <span className="text-headline-sm text-honey font-semibold tracking-tight">
-            Board Game Helper
+            <span className="inline text-sm sm:text-xl">Board Game Helper</span>
           </span>
         </Link>
 
@@ -58,24 +59,11 @@ export default function Header() {
           ))}
         </nav>
         <div className="flex items-center gap-2">
+          <SidebarNav navLinkClass={navLinkClass} navItems={navItems} />
+
           <LanguageSelector />
         </div>
       </div>
-
-      <nav className="border-line-strong/30 overflow-x-auto border-t px-4 py-2 lg:hidden">
-        <div className="flex items-center gap-1">
-          {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              aria-current={pathname === item.href ? "page" : undefined}
-              className={cn(navLinkClass(item.href), "shrink-0")}
-            >
-              {item.label}
-            </Link>
-          ))}
-        </div>
-      </nav>
     </header>
   );
 }

@@ -35,8 +35,19 @@ export default function LanguageSelector() {
       onValueChange={handleLocaleChange}
       disabled={isPending}
     >
-      <SelectTrigger aria-label={t("label")} className="w-32 cursor-pointer">
-        <SelectValue />
+      <SelectTrigger aria-label={t("label")} className="w-auto cursor-pointer">
+        <SelectValue>
+          <span className="flex items-center gap-2">
+            <Image
+              src={`/lang/${locale}.png`}
+              alt=""
+              width={26}
+              height={20}
+              className="h-5 w-auto rounded-sm"
+            />
+            <span className="hidden sm:inline">{t(locale)}</span>
+          </span>
+        </SelectValue>
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
