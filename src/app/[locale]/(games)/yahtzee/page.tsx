@@ -1,11 +1,11 @@
 import ScoreTable from "@/components/yahtzee/score-table";
-import UsernameDialog from "@/components/yahtzee/username-dialog";
 
-export default function page() {
+export default function Page() {
   return (
-    <div className="flex h-full w-full content-center justify-center p-6">
-      <UsernameDialog />
-      <ScoreTable />
+    <div className="relative w-full overflow-hidden">
+      <div className="relative mx-auto flex w-full max-w-7xl flex-col gap-10 px-4 py-6 sm:px-6 lg:px-8">
+        <ScoreTable />
+      </div>
     </div>
   );
 }

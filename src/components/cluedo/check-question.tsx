@@ -25,19 +25,18 @@ export function CheckQuestion({
       type="button"
       onClick={handleClick}
       className={cn(
-        "focus-visible:ring-ring/50 focus-visible:border-ring flex size-4 shrink-0 items-center justify-center rounded-[4px] border shadow-xs transition-shadow outline-none focus-visible:ring-2 disabled:cursor-not-allowed disabled:opacity-50",
-        "bg-background text-foreground border-input dark:bg-input/30",
-        step === 2 &&
-          "bg-primary text-primary-foreground border-primary dark:bg-primary",
-        step === 1 && "border-gray-900 bg-gray-900 text-white",
+        "inline-flex size-6 shrink-0 cursor-pointer items-center justify-center align-middle",
+        "rounded-sm border border-transparent bg-panel-high text-ink-faint dark:bg-panel-high",
+        step === 1 && "border-honey/50 bg-honey/15 text-honey dark:bg-honey/15",
+        step === 2 && "border-baize/50 bg-baize/15 text-baize dark:bg-baize/15",
         className,
       )}
       {...props}
     >
       {step === 1 ? (
-        <IoIosHelp className="h-full w-full" />
+        <IoIosHelp className="size-full" />
       ) : step === 2 ? (
-        <CheckIcon className="h-full w-full" />
+        <CheckIcon className="size-full" />
       ) : null}
     </button>
   );
