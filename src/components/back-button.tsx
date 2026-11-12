@@ -9,7 +9,7 @@ export default function BackButton() {
 
   return (
     <Button
-      className="mb-2"
+      className="mb-2 cursor-pointer"
       onClick={() => {
         if (window.history.length > 1) {
           router.back();

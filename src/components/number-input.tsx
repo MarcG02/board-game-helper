@@ -34,7 +34,7 @@ export default function NumberInput({
       value={num}
       onChange={handleChange}
       name={inputName}
-      className="w-full rounded-lg border px-3 py-2 text-center text-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+      className="border-field bg-panel-low text-ink h-10 w-full rounded-md text-center text-body-lg focus-visible:ring-focus"
     />
   );
 }
